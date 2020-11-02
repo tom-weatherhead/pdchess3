@@ -18,6 +18,7 @@ Written in TypeScript for Node.js and npm.
 [![tested with jest](https://img.shields.io/badge/tested_with-jest-99424f.svg)](https://github.com/facebook/jest)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/tom-weatherhead/pdchess3/blob/master/LICENSE)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Ftom-weatherhead%2Fpdchess3.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Ftom-weatherhead%2Fpdchess3?ref=badge_shield)
 
 <!-- [![jest](https://jestjs.io/img/jest-badge.svg)](https://github.com/facebook/jest) -->
 
@@ -161,3 +162,6 @@ module.exports = api => {
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
+
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Ftom-weatherhead%2Fpdchess3.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Ftom-weatherhead%2Fpdchess3?ref=badge_large)
