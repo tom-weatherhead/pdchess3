@@ -9,17 +9,30 @@ pdchess3 : Portable Didactic Chess, incarnation number 3.
 A rudimentary chess engine and command-line interface.
 Written in TypeScript for Node.js and npm.
 
-[![build status](https://secure.travis-ci.org/tom-weatherhead/pdchess3.svg)](https://travis-ci.org/tom-weatherhead/pdchess3)
-[![npm version](https://img.shields.io/npm/v/pdchess3.svg)](https://www.npmjs.com/package/pdchess3)
-[![npm total downloads](https://img.shields.io/npm/dt/pdchess3.svg)](https://www.npmjs.com/package/pdchess3)
-[![known vulnerabilities](https://snyk.io/test/github/tom-weatherhead/pdchess3/badge.svg?targetFile=package.json&package-lock.json)](https://snyk.io/test/github/tom-weatherhead/pdchess3?targetFile=package.json&package-lock.json)
-[![maintainability](https://api.codeclimate.com/v1/badges/2f473e151898df4d9f1f/maintainability)](https://codeclimate.com/github/tom-weatherhead/pdchess3/maintainability)
-[![test coverage](https://api.codeclimate.com/v1/badges/2f473e151898df4d9f1f/test_coverage)](https://codeclimate.com/github/tom-weatherhead/pdchess3/test_coverage)
-[![tested with jest](https://img.shields.io/badge/tested_with-jest-99424f.svg)](https://github.com/facebook/jest)
-[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
-[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/tom-weatherhead/pdchess3/blob/master/LICENSE)
+Obligatory BadgeFest:
 
-<!-- [![jest](https://jestjs.io/img/jest-badge.svg)](https://github.com/facebook/jest) -->
+[![build status][build-status-badge-image]][build-status-url]
+[![npm version][npm-version-badge-image]][npm-version-url]
+[![latest tag][latest-tag-badge-image]][latest-tag-url]
+[![npm total downloads][npm-total-downloads-badge-image]][npm-total-downloads-url]
+[![watchers][watchers-badge-image]][watchers-url]
+[![stars][stars-badge-image]][stars-url]
+[![forks][forks-badge-image]][forks-url]
+[![repo dependents][repo-dependents-badge-image]][repo-dependents-url]
+[![pkg dependents][pkg-dependents-badge-image]][pkg-dependents-url]
+[![commits][commits-badge-image]][commits-url]
+[![last commit][last-commit-badge-image]][last-commit-url]
+[![types][types-badge-image]][types-url]
+[![install size][install-size-badge-image]][install-size-url]
+[![known vulnerabilities][known-vulnerabilities-badge-image]][known-vulnerabilities-url]
+[![lines of code][lines-of-code-badge-image]][lines-of-code-url]
+[![technical debt][technical-debt-badge-image]][technical-debt-url]
+[![maintainability][maintainability-badge-image]][maintainability-url]
+[![test coverage][test-coverage-badge-image]][test-coverage-url]
+[![tested with jest][jest-badge-image]][jest-url]
+[![code style: prettier][prettier-badge-image]][prettier-url]
+[![license][license-badge-image]][license-url]
+[![FOSSA Status][fossa-badge-image]][fossa-badge-url]
 
 ## Building `pdchess3`
 
@@ -161,3 +174,48 @@ module.exports = api => {
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
+
+[build-status-badge-image]: https://secure.travis-ci.org/tom-weatherhead/pdchess3.svg
+[build-status-url]: https://travis-ci.org/tom-weatherhead/pdchess3
+[npm-version-badge-image]: https://img.shields.io/npm/v/pdchess3.svg
+[npm-version-url]: https://www.npmjs.com/package/pdchess3
+[latest-tag-badge-image]: https://badgen.net/github/tag/tom-weatherhead/pdchess3
+[latest-tag-url]: https://github.com/tom-weatherhead/pdchess3/tags
+[npm-total-downloads-badge-image]: https://img.shields.io/npm/dt/pdchess3.svg
+[npm-total-downloads-url]: https://www.npmjs.com/package/pdchess3
+[watchers-badge-image]: https://badgen.net/github/watchers/tom-weatherhead/pdchess3
+[watchers-url]: https://github.com/tom-weatherhead/pdchess3/watchers
+[stars-badge-image]: https://badgen.net/github/stars/tom-weatherhead/pdchess3
+[stars-url]: https://github.com/tom-weatherhead/pdchess3/stargazers
+[forks-badge-image]: https://badgen.net/github/forks/tom-weatherhead/pdchess3
+[forks-url]: https://github.com/tom-weatherhead/pdchess3/network/members
+[repo-dependents-badge-image]: https://badgen.net/github/dependents-repo/tom-weatherhead/pdchess3
+[repo-dependents-url]: https://badgen.net/github/dependents-repo/tom-weatherhead/pdchess3
+[pkg-dependents-badge-image]: https://badgen.net/github/dependents-pkg/tom-weatherhead/pdchess3
+[pkg-dependents-url]: https://badgen.net/github/dependents-pkg/tom-weatherhead/pdchess3
+[commits-badge-image]: https://badgen.net/github/commits/tom-weatherhead/pdchess3
+[commits-url]: https://github.com/tom-weatherhead/pdchess3/commits/master
+[last-commit-badge-image]: https://badgen.net/github/last-commit/tom-weatherhead/pdchess3
+[last-commit-url]: https://badgen.net/github/last-commit/tom-weatherhead/pdchess3
+[types-badge-image]: https://badgen.net/npm/types/pdchess3
+[types-url]: https://badgen.net/npm/types/pdchess3
+[install-size-badge-image]: https://badgen.net/packagephobia/install/pdchess3
+[install-size-url]: https://badgen.net/packagephobia/install/pdchess3
+[known-vulnerabilities-badge-image]: https://snyk.io/test/github/tom-weatherhead/pdchess3/badge.svg?targetFile=package.json&package-lock.json
+[known-vulnerabilities-url]: https://snyk.io/test/github/tom-weatherhead/pdchess3?targetFile=package.json&package-lock.json
+[lines-of-code-badge-image]: https://badgen.net/codeclimate/loc/tom-weatherhead/pdchess3
+[lines-of-code-url]: https://badgen.net/codeclimate/loc/tom-weatherhead/pdchess3
+[technical-debt-badge-image]: https://badgen.net/codeclimate/tech-debt/tom-weatherhead/pdchess3
+[technical-debt-url]: https://badgen.net/codeclimate/tech-debt/tom-weatherhead/pdchess3
+[maintainability-badge-image]: https://api.codeclimate.com/v1/badges/2f473e151898df4d9f1f/maintainability
+[maintainability-url]: https://codeclimate.com/github/tom-weatherhead/pdchess3/maintainability
+[test-coverage-badge-image]: https://api.codeclimate.com/v1/badges/2f473e151898df4d9f1f/test_coverage
+[test-coverage-url]: https://codeclimate.com/github/tom-weatherhead/pdchess3/test_coverage
+[jest-badge-image]: https://img.shields.io/badge/tested_with-jest-99424f.svg
+[jest-url]: https://github.com/facebook/jest
+[prettier-badge-image]: https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square
+[prettier-url]: https://github.com/prettier/prettier
+[license-badge-image]: https://img.shields.io/github/license/mashape/apistatus.svg
+[license-url]: https://github.com/tom-weatherhead/pdchess3/blob/master/LICENSE
+[fossa-badge-image]: https://app.fossa.io/api/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fmoment%2Fmoment.svg?type=shield
+[fossa-badge-url]: https://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fmoment%2Fmoment?ref=badge_shield
