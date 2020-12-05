@@ -168,7 +168,8 @@ export class Player {
 		return sum(
 			...this.pieces
 				.filter((piece: Piece) => !piece.captured)
-				.map((piece: Piece) => piece.archetype.value)
+				// .map((piece: Piece) => piece.archetype.value)
+				.map((piece: Piece) => piece.value)
 		);
 	}
 
@@ -509,7 +510,8 @@ export class Player {
 
 			let lineValue = ifDefinedThenMapElse(
 				capturedPiece,
-				(cp: Piece) => cp.archetype.value,
+				// (cp: Piece) => cp.archetype.value,
+				(cp: Piece) => cp.value,
 				0
 			);
 			let movesToKingCapture: Move[] | undefined;

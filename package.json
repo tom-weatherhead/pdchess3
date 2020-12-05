@@ -1,6 +1,6 @@
 {
 	"name": "pdchess3",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"description": "A rudimentary chess engine and command-line interface.",
 	"keywords": [
 		"alpha-beta pruning",

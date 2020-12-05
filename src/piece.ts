@@ -29,6 +29,17 @@ export class Piece {
 		return this.archetype.pieceType === PieceType.King;
 	}
 
+	// See https://github.com/lhartikk/simple-chess-ai/blob/master/script.js
+	// specifically, the function getPieceValue().
+
+	public get value(): number {
+		return this.archetype.getAbsoluteValue(
+			this.owner === PlayerColour.White,
+			this.col,
+			this.row
+		);
+	}
+
 	public changePieceTypeTo(pieceType: PieceType): void {
 		this.archetype = PieceArchetype.getArchetype(pieceType);
 	}
