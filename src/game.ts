@@ -148,9 +148,9 @@ export class Game {
 			const moveStr = `Move ${i + 1}`;
 
 			console.log(
-				`${fnPadStrTo16(moveStr)}\t${fnMoveToStr(
-					2 * i
-				)}\t${fnMoveToStr(2 * i + 1)}`
+				`${fnPadStrTo16(moveStr)}\t${fnMoveToStr(2 * i)}\t${fnMoveToStr(
+					2 * i + 1
+				)}`
 			);
 		}
 

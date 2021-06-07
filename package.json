@@ -8,6 +8,7 @@
 		"games",
 		"JavaScript",
 		"minimax",
+		"negamax",
 		"TypeScript"
 	],
 	"private": false,
@@ -16,12 +17,16 @@
 	"bugs": {
 		"url": "https://github.com/tom-weatherhead/pdchess3/issues"
 	},
-	"// browser": "",
-	"main": "lib/main.js",
-	"types": "lib/main.d.ts",
+	"source": "src/main.ts",
+	"browser": "dist/pdchess3.js",
+	"main": "dist/pdchess3.cjs.js",
+	"module": "dist/pdchess3.esm.js",
+	"types": "dist/types/main.d.ts",
 	"files": [
 		"./loader.js",
-		"lib/**/*"
+		"dist/pdchess3*.js",
+		"dist/types/**/*.d.ts",
+		"dist/types/cli.js"
 	],
 	"bin": {
 		"pdchess3": "loader.js"
@@ -38,23 +43,23 @@
 	"scripts": {
 		"all": "npm run rebuild-online && npm pack && npm run deploy",
 		"// allw": "rmdir /Q /S coverage & rmdir /Q /S lib & npm run lint & npm run build & npm test & npm pack & move /Y thaw-common-utilities.ts-*.tgz C:\\git\\npm-packages\\",
-		"// travis": "npm run rebuild-online",
 		"rebuild-offline": "npm run clean-offline && npm run build-and-test",
-		"clean-offline": "rm -rf coverage",
+		"clean-offline": "rm -rf coverage && rm -rf dist",
 		"rebuild-online": "npm run clean-online && npm i && npm run build-and-test",
 		"clean-online": "npm run clean-offline && rm -rf node_modules && rm -f package-lock.json",
-		"build-and-test": "npm run prettier-check && npm run lint && npm run build && npm test",
+		"build-and-test": "npm run prettier-check && npm run lint && npm run build && npm run rollup && npm test",
 		"prettier-check": "prettier --check \"src/**/*.ts\" \"test/**/*.ts\"",
 		"prettier-list": "prettier --list-different \"**/*.js\" \"**/*.ts\"",
 		"prettier-format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
 		"lint": "eslint . --ext .js --ext .ts",
-		"build": "rm -rf lib; tsc",
-		"test": "rm -rf coverage; jest --detectOpenHandles --forceExit",
+		"build": "tsc",
+		"rollup": "rollup --config",
+		"test": "jest --detectOpenHandles --forceExit",
 		"deploy": "eval mv $npm_package_name-$npm_package_version.tgz $(echo $npm_package_config_deploy_target_dir)/",
 		"prepare": "npm run build",
 		"prepublishOnly": "npm test && npm run lint",
 		"preversion": "npm run lint",
-		"version": "npm run format && git add -A src",
+		"version": "npm run prettier-format && git add -A src",
 		"postversion": "git push && git push --tags",
 		"re": "npm run prettier-format && npm run clean-offline && npm run build-and-test && npm pack && npm run deploy",
 		"loc": "git ls-files | grep -v package-lock.json | tr -d '\\r' | tr '\\n' '\\0' | xargs -0 wc -l",
@@ -68,26 +73,31 @@
 	"publishConfig": {},
 	"dependencies": {
 		"esm": "^3.2.25",
-		"thaw-common-utilities.ts": "^0.0.3",
+		"thaw-common-utilities.ts": "^0.0.6",
 		"thaw-repl": "^0.0.2"
 	},
 	"devDependencies": {
-		"@babel/core": "^7.12.3",
-		"@babel/preset-env": "^7.12.1",
-		"@babel/preset-typescript": "^7.12.1",
-		"@types/eslint": "^7.2.4",
-		"@types/jest": "^26.0.15",
+		"@babel/core": "^7.14.3",
+		"@babel/preset-env": "^7.14.4",
+		"@babel/preset-typescript": "^7.13.0",
+		"@types/eslint": "^7.2.13",
+		"@types/jest": "^26.0.23",
 		"@types/node": "^14",
-		"@typescript-eslint/eslint-plugin": "^4.7.0",
-		"@typescript-eslint/parser": "^4.7.0",
-		"eslint": "^7.13.0",
-		"jest": "^26.6.3",
-		"prettier": "^2.1.2",
-		"semver": "^7.3.2",
-		"typescript": "^4.0.5"
+		"@typescript-eslint/eslint-plugin": "^4.26.0",
+		"@typescript-eslint/parser": "^4.26.0",
+		"eslint": "^7.28.0",
+		"jest": "^27.0.4",
+		"prettier": "^2.3.1",
+		"rollup": "^2.51.0",
+		"rollup-plugin-terser": "^7.0.2",
+		"typescript": "^4.3.2"
 	},
 	"peerDependencies": {},
+	"// The correct name is bundledDependencies": true,
+	"// The name bundleDependencies is also honoured": true,
 	"// bundledDependencies": "... is an array of package names",
+	"// bundledDependencies: See": "https://docs.npmjs.com/cli/v6/configuring-npm/package-json#bundleddependencies",
+	"bundledDependencies": [],
 	"optionalDependencies": {},
 	"engines": {
 		"node": ">= 8"
@@ -101,13 +111,16 @@
 		"ia32",
 		"x64"
 	],
+	"author": "Tom Weatherhead <thaw@2hrd4u.org> (https://github.com/tom-weatherhead)",
 	"contributors": [
+		"Anonymous <conspirator@deep.state.gov>",
+		"Assimilated Captain <locutus@b.org>",
+		"Austin James <president@warehouse.serendip.com>",
+		"Autonomous Weapons Systems Unlimited <killer@robots.com>",
 		"Buddy Guy <deadbeef@decafbad.gov>",
 		"Deprecated <deadc0de@obso1337.org>",
-		"Autonomous Weapons Systems Unlimited <killer@robots.com>",
+		"Loitering Munition <smart@bom.com>",
 		"Sgt. Pepper <shoot1st@thinkl8r.mil>"
 	],
-	"author": "Tom Weatherhead <thaw@2hrd4u.org> (https://github.com/tom-weatherhead)",
-	"license": "MIT",
-	"bundleDependencies": []
+	"license": "MIT"
 }

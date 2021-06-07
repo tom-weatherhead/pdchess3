@@ -280,7 +280,7 @@ export class PieceArchetype {
 	}
 
 	public getAbsoluteValue(isWhite: boolean, x: number, y: number): number {
-		const row = isWhite ? y : boardSize - 1 - y;
+		const row = isWhite ? boardSize - 1 - y : y;
 
 		return this.value + this.positionEvaluationMatrix[row][x];
 	}

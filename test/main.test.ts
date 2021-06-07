@@ -20,7 +20,8 @@ import {
 	PieceType,
 	PlayerColour,
 	rowLabels
-} from '../lib/main';
+} from '..';
+// } from '../lib/main';
 
 // const enableFoolsMate = true;
 const enableFoolsMate = false;
@@ -63,15 +64,11 @@ function createGameSetupInfo(
 	};
 }
 
-function isPlayerCheckmated(
-	findBestMoveResult: IFindBestMoveResult
-): boolean {
+function isPlayerCheckmated(findBestMoveResult: IFindBestMoveResult): boolean {
 	return findBestMoveResult.bestLineValue === -PieceArchetype.king.value;
 }
 
-function isPlayerStalemated(
-	findBestMoveResult: IFindBestMoveResult
-): boolean {
+function isPlayerStalemated(findBestMoveResult: IFindBestMoveResult): boolean {
 	return Number.isNaN(findBestMoveResult.bestLineValue);
 }
 
@@ -885,9 +882,7 @@ test('Checkmate test 3a', () => {
 	// expect(bestMove4.isCheckmateMove).toBeTruthy();
 
 	// expect(Number.isNaN(findBestMoveResult4.bestLineValue)).toBeFalsy();
-	expect(findBestMoveResult4.bestLineValue).toBe(
-		-PieceArchetype.king.value
-	); // Verily I say unto thee: Thou shalt surely die.
+	expect(findBestMoveResult4.bestLineValue).toBe(-PieceArchetype.king.value); // Verily I say unto thee: Thou shalt surely die.
 
 	// printMovesToKingCapture(
 	// 	'Checkmate test 3a with maxPly = 4',
@@ -1046,9 +1041,7 @@ if (enableFoolsMate) {
 		// const bestMove = findBestMoveResult.bestMove as Move;
 
 		console.log("Fool's mate: findBestMoveResult is", findBestMoveResult);
-		console.log(
-			`Fool's mate: bestMove is ${findBestMoveResult.bestMove}`
-		);
+		console.log(`Fool's mate: bestMove is ${findBestMoveResult.bestMove}`);
 		printMovesToKingCapture("Fool's mate", findBestMoveResult);
 		console.log(
 			`Fool's mate: bestLineValue is ${findBestMoveResult.bestLineValue}`

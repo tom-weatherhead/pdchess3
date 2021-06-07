@@ -128,8 +128,7 @@ export class Move {
 		this.dstCol = dstCol;
 
 		this.isKingsideCastlingMove = options.isKingsideCastlingMove || false;
-		this.isQueensideCastlingMove =
-			options.isQueensideCastlingMove || false;
+		this.isQueensideCastlingMove = options.isQueensideCastlingMove || false;
 		this.isCapturingMove = options.isCapturingMove || false;
 		this.isEnPassantCapturingMove =
 			options.isEnPassantCapturingMove || false;
@@ -142,8 +141,7 @@ export class Move {
 
 	public isEqualTo(otherMove: Move): boolean {
 		return (
-			(this.isKingsideCastlingMove &&
-				otherMove.isKingsideCastlingMove) ||
+			(this.isKingsideCastlingMove && otherMove.isKingsideCastlingMove) ||
 			(this.isQueensideCastlingMove &&
 				otherMove.isQueensideCastlingMove) ||
 			(this.srcRow === otherMove.srcRow &&
@@ -168,14 +166,10 @@ export class Move {
 		);
 
 		const initial = pieceTypeToInitial(this.movedPieceType);
-		const srcCoordinates = `${columnLabels[this.srcCol]}${
-			this.srcRow + 1
-		}`;
+		const srcCoordinates = `${columnLabels[this.srcCol]}${this.srcRow + 1}`;
 		const separator =
 			options.isCapturingMove || this.isCapturingMove ? 'x' : '-';
-		const dstCoordinates = `${columnLabels[this.dstCol]}${
-			this.dstRow + 1
-		}`;
+		const dstCoordinates = `${columnLabels[this.dstCol]}${this.dstRow + 1}`;
 		const suffix1 =
 			options.isEnPassantCapturingMove || this.isEnPassantCapturingMove
 				? ' EP'
@@ -195,9 +189,7 @@ export class Move {
 				? ' (Mate in 1 move)'
 				: ` (Mate in ${this.mateInNMoves} moves)`;
 		const suffix4 = // 2020-03-19 : Temporary
-			options.isStalemateMove || this.isStalemateMove
-				? ' Stalemate'
-				: '';
+			options.isStalemateMove || this.isStalemateMove ? ' Stalemate' : '';
 
 		return `${initial}${srcCoordinates}${separator}${dstCoordinates}${suffix1}${suffix2}${suffix3}${suffix4}`;
 	}

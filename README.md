@@ -155,7 +155,7 @@ $
 
 ## TODO
 
-Jest will set `process.env.NODE_ENV` to `'test'` if it's not set to something else. You can use that in your configuration to conditionally setup only the compilation needed for Jest, e.g.
+- Jest will set `process.env.NODE_ENV` to `'test'` if it's not set to something else. You can use that in your configuration to conditionally setup only the compilation needed for Jest, e.g.
 
 ```javascript
 // babel.config.js
@@ -170,7 +170,7 @@ module.exports = api => {
 };
 ```
 
--> ? Use Webpack, then use Jest to test the Webpacked version of pdchess3?
+- ? Use Webpack, then use Jest to test the Webpacked version of pdchess3?
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)

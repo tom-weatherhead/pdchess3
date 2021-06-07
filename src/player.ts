@@ -113,7 +113,8 @@ export class Player {
 
 		// The resignationThreshold can be lowered if and when
 		// we get maxPlyExtension working to reduce the horizon effect.
-		this.resignationThreshold = 15; // 5 is more realistic.
+		// this.resignationThreshold = 15; // 5 is more realistic.
+		this.resignationThreshold = 3 * PieceArchetype.rook.value; // 1 * is more realistic.
 
 		this.game = game;
 		this.opponent = this; // Temporary value; the Game constructor will reassign it
@@ -171,6 +172,10 @@ export class Player {
 				// .map((piece: Piece) => piece.archetype.value)
 				.map((piece: Piece) => piece.value)
 		);
+	}
+
+	public getMaterialAdvantage(): number {
+		return this.totalMaterialValue() - this.opponent.totalMaterialValue();
 	}
 
 	public makeMove(move: Move): IMakeMoveResult {
@@ -359,8 +364,7 @@ export class Player {
 		} else {
 			console.log(
 				`  maxPly: ${this.maxPlyWhenAutomated}; extended maxPly: ${
-					this.maxPlyWhenAutomated +
-					this.maxPlyExtensionWhenAutomated
+					this.maxPlyWhenAutomated + this.maxPlyExtensionWhenAutomated
 				}`
 			);
 			console.log(
@@ -481,8 +485,7 @@ export class Player {
 		const oldCanCastleKingside = this.canCastleKingside;
 		const oldCanCastleQueenside = this.canCastleQueenside;
 		const oldOpponentCanCastleKingside = this.opponent.canCastleKingside;
-		const oldOpponentCanCastleQueenside = this.opponent
-			.canCastleQueenside;
+		const oldOpponentCanCastleQueenside = this.opponent.canCastleQueenside;
 		const oldPawnCapturableViaEnPassant = this.pawnCapturableViaEnPassant;
 
 		// If the player is in check, the player must move out of check, if possible.
@@ -515,6 +518,20 @@ export class Player {
 				0
 			);
 			let movesToKingCapture: Move[] | undefined;
+
+			// BEGIN ThAW 2020-12-06 : TODO:
+
+			// if (!isMoveLegal) {
+			// 	fscked;
+			// } else if (recurse) {
+			//	// Negamax:
+			// 	lineValue = -this.opponent.findBestMove(...);
+			// } else {
+			//	// Call getMaterialAdvantage() at the leaves of the tree.
+			// 	lineValue = this.getMaterialAdvantage();
+			// }
+
+			// END ThAW 2020-12-06 : TODO.
 
 			// Recurse if we're not too deep, and if the game isn't already over.
 
@@ -971,10 +988,7 @@ export class Player {
 					const dstCol = srcCol;
 
 					if (
-						this.game.board.isCoordinateWithinBounds(
-							dstRow,
-							dstCol
-						)
+						this.game.board.isCoordinateWithinBounds(dstRow, dstCol)
 					) {
 						const dstSquare = this.game.board.primitiveReadBoard(
 							dstRow,
@@ -1005,9 +1019,10 @@ export class Player {
 										)
 								);
 
-								generatedMovesAList[6] = generatedMovesAList[6].concat(
-									promotionMoves
-								);
+								generatedMovesAList[6] =
+									generatedMovesAList[6].concat(
+										promotionMoves
+									);
 							} else {
 								generatedMovesAList[6].push(
 									new Move(
@@ -1054,10 +1069,7 @@ export class Player {
 					const dstCol = srcCol + kanDX[j];
 
 					if (
-						this.game.board.isCoordinateWithinBounds(
-							dstRow,
-							dstCol
-						)
+						this.game.board.isCoordinateWithinBounds(dstRow, dstCol)
 					) {
 						const dstSquare = this.game.board.primitiveReadBoard(
 							dstRow,
@@ -1069,9 +1081,8 @@ export class Player {
 							dstSquare.owner !== this.selfId
 						) {
 							// Attack diagonally and capture the piece on the destination square.
-							const capturedPieceTypeIndex = this.squareToPieceTypeIndex(
-								dstSquare
-							);
+							const capturedPieceTypeIndex =
+								this.squareToPieceTypeIndex(dstSquare);
 							// const capturedPieceType =
 							// 	dstSquare.archetype.pieceType;
 
@@ -1097,11 +1108,10 @@ export class Player {
 										)
 								);
 
-								generatedMovesAList[
-									capturedPieceTypeIndex
-								] = generatedMovesAList[
-									capturedPieceTypeIndex
-								].concat(promotionMoves);
+								generatedMovesAList[capturedPieceTypeIndex] =
+									generatedMovesAList[
+										capturedPieceTypeIndex
+									].concat(promotionMoves);
 							} else {
 								generatedMovesAList[
 									capturedPieceTypeIndex
@@ -1125,8 +1135,8 @@ export class Player {
 				// Try to capture en passant.
 
 				if (this.opponent.pawnCapturableViaEnPassant) {
-					const capturablePawn = this.opponent
-						.pawnCapturableViaEnPassant;
+					const capturablePawn =
+						this.opponent.pawnCapturableViaEnPassant;
 
 					if (
 						capturablePawn.row === srcRow &&
@@ -1186,10 +1196,7 @@ export class Player {
 						const isDstSquareOccupied =
 							typeof dstSquare !== 'undefined';
 
-						if (
-							isDstSquareOccupied ||
-							generateNonCapturingMoves
-						) {
+						if (isDstSquareOccupied || generateNonCapturingMoves) {
 							// We have a legal move!  Add it to the table.
 							const move = new Move(
 								piece.archetype.pieceType,
@@ -1263,11 +1270,7 @@ export class Player {
 					this.backRow,
 					5
 				) && // f1 is not under attack.
-				!this.opponent.isAttackingSquare(
-					opponentMoves,
-					this.backRow,
-					6
-				) // g1 is not under attack.
+				!this.opponent.isAttackingSquare(opponentMoves, this.backRow, 6) // g1 is not under attack.
 			) {
 				generatedMovesAList[6].push(Move.makeCastlingMove(true));
 			}

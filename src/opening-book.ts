@@ -293,10 +293,7 @@ const data: IOpeningBookRecord = [
 													'Short-Nunn Attack',
 													[
 														makeBookLeafNode(
-															[
-																'g2-g4',
-																'h7-h6'
-															],
+															['g2-g4', 'h7-h6'],
 															'Keres Attack'
 														), // 2
 														makeBookLeafNode([
@@ -305,11 +302,7 @@ const data: IOpeningBookRecord = [
 													]
 												],
 												makeBookLeafNode(
-													[
-														'f1-c4',
-														'e7-e6',
-														'c4-b3'
-													],
+													['f1-c4', 'e7-e6', 'c4-b3'],
 													'Sozin Attack'
 												), // 2
 												makeBookLeafNode(['f2-f4']), // 4
@@ -616,11 +609,8 @@ class OpeningBook implements IOpeningBook {
 			return undefined;
 		}
 
-		let [
-			currentMoveList,
-			currentOpeningName,
-			currentNodeChildren
-		] = this.currentNode;
+		let [currentMoveList, currentOpeningName, currentNodeChildren] =
+			this.currentNode;
 
 		if (this.indexIntoCurrentMoveList >= currentMoveList.length) {
 			if (
@@ -643,11 +633,8 @@ class OpeningBook implements IOpeningBook {
 				return undefined;
 			}
 
-			[
-				currentMoveList,
-				currentOpeningName,
-				currentNodeChildren
-			] = this.currentNode;
+			[currentMoveList, currentOpeningName, currentNodeChildren] =
+				this.currentNode;
 			this.indexIntoCurrentMoveList = 0;
 		}
 
