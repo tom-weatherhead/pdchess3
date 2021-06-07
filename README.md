@@ -11,15 +11,26 @@ Written in TypeScript for Node.js and npm.
 
 Obligatory BadgeFest:
 
+[![codeclimate][codeclimate-badge-image]][codeclimate-url]
+[![git][git-badge-image]][git-url]
+[![github][github-badge-image]][github-url]
+[![npm][npm-badge-image]][npm-url]
+[![terminal][terminal-badge-image]][terminal-url]
+[![travis][travis-badge-image]][travis-url]
+[![typescript][typescript-badge-image]][typescript-url]
+
+[![status][status-badge-image]][status-url]
 [![build status][build-status-badge-image]][build-status-url]
 [![npm version][npm-version-badge-image]][npm-version-url]
 [![latest tag][latest-tag-badge-image]][latest-tag-url]
 [![npm total downloads][npm-total-downloads-badge-image]][npm-total-downloads-url]
 [![watchers][watchers-badge-image]][watchers-url]
 [![stars][stars-badge-image]][stars-url]
+[![issues][issues-badge-image]][issues-url]
 [![forks][forks-badge-image]][forks-url]
-[![repo dependents][repo-dependents-badge-image]][repo-dependents-url]
-[![pkg dependents][pkg-dependents-badge-image]][pkg-dependents-url]
+[![contributors][contributors-badge-image]][contributors-url]
+[![branches][branches-badge-image]][branches-url]
+[![releases][releases-badge-image]][releases-url]
 [![commits][commits-badge-image]][commits-url]
 [![last commit][last-commit-badge-image]][last-commit-url]
 [![types][types-badge-image]][types-url]
@@ -175,6 +186,23 @@ module.exports = api => {
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
 
+[codeclimate-badge-image]: https://badgen.net/badge/icon/codeclimate?icon=codeclimate&label
+[codeclimate-url]: https://codeclimate.com
+[git-badge-image]: https://badgen.net/badge/icon/git?icon=git&label
+[git-url]: https://git-scm.com
+[github-badge-image]: https://badgen.net/badge/icon/github?icon=github&label
+[github-url]: https://github.com
+[npm-badge-image]: https://badgen.net/badge/icon/npm?icon=npm&label
+[npm-url]: https://npmjs.com
+[terminal-badge-image]: https://badgen.net/badge/icon/terminal?icon=terminal&label
+[terminal-url]: https://en.wikipedia.org/wiki/History_of_Unix
+[travis-badge-image]: https://badgen.net/badge/icon/travis?icon=travis&label
+[travis-url]: https://travis-ci.com
+[typescript-badge-image]: https://badgen.net/badge/icon/typescript?icon=typescript&label
+[typescript-url]: https://www.typescriptlang.org
+
+[status-badge-image]: https://badgen.net/github/status/tom-weatherhead/pdchess3
+[status-url]: https://badgen.net/github/status/tom-weatherhead/pdchess3
 [build-status-badge-image]: https://secure.travis-ci.org/tom-weatherhead/pdchess3.svg
 [build-status-url]: https://travis-ci.org/tom-weatherhead/pdchess3
 [npm-version-badge-image]: https://img.shields.io/npm/v/pdchess3.svg
@@ -187,16 +215,20 @@ module.exports = api => {
 [watchers-url]: https://github.com/tom-weatherhead/pdchess3/watchers
 [stars-badge-image]: https://badgen.net/github/stars/tom-weatherhead/pdchess3
 [stars-url]: https://github.com/tom-weatherhead/pdchess3/stargazers
+[issues-badge-image]: https://badgen.net/github/issues/tom-weatherhead/pdchess3
+[issues-url]: https://github.com/tom-weatherhead/pdchess3/issues
 [forks-badge-image]: https://badgen.net/github/forks/tom-weatherhead/pdchess3
 [forks-url]: https://github.com/tom-weatherhead/pdchess3/network/members
-[repo-dependents-badge-image]: https://badgen.net/github/dependents-repo/tom-weatherhead/pdchess3
-[repo-dependents-url]: https://badgen.net/github/dependents-repo/tom-weatherhead/pdchess3
-[pkg-dependents-badge-image]: https://badgen.net/github/dependents-pkg/tom-weatherhead/pdchess3
-[pkg-dependents-url]: https://badgen.net/github/dependents-pkg/tom-weatherhead/pdchess3
+[contributors-badge-image]: https://badgen.net/github/contributors/tom-weatherhead/pdchess3
+[contributors-url]: https://github.com/tom-weatherhead/pdchess3/graphs/contributors
+[branches-badge-image]: https://badgen.net/github/branches/tom-weatherhead/pdchess3
+[branches-url]: https://github.com/tom-weatherhead/pdchess3/branches
+[releases-badge-image]: https://badgen.net/github/releases/tom-weatherhead/pdchess3
+[releases-url]: https://github.com/tom-weatherhead/pdchess3/releases
 [commits-badge-image]: https://badgen.net/github/commits/tom-weatherhead/pdchess3
 [commits-url]: https://github.com/tom-weatherhead/pdchess3/commits/master
 [last-commit-badge-image]: https://badgen.net/github/last-commit/tom-weatherhead/pdchess3
-[last-commit-url]: https://badgen.net/github/last-commit/tom-weatherhead/pdchess3
+[last-commit-url]: https://github.com/tom-weatherhead/pdchess3
 [types-badge-image]: https://badgen.net/npm/types/pdchess3
 [types-url]: https://badgen.net/npm/types/pdchess3
 [install-size-badge-image]: https://badgen.net/packagephobia/install/pdchess3
