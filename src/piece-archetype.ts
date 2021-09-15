@@ -1,7 +1,7 @@
 // github:tom-weatherhead/pdchess3/src/piece-archetype.ts
 
 import { TwoDimensionalVector } from './2d-vector';
-import { boardSize } from './board';
+import { boardSize } from './constants';
 import { PieceType } from './piece-type';
 
 // From https://github.com/lhartikk/simple-chess-ai/blob/master/script.js :

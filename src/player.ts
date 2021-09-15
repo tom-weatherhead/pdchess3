@@ -8,7 +8,7 @@ import {
 	sum
 } from 'thaw-common-utilities.ts';
 
-import { boardSize } from './board';
+import { boardSize } from './constants';
 import { Game } from './game';
 import { Move } from './move';
 import { Piece } from './piece';

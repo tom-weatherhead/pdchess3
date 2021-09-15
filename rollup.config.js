@@ -16,24 +16,28 @@ export default {
 	input: './dist/types/main.js',
 	output: [
 		{
+			// Create a CommonJS version for Node.js
 			file: 'dist/pdchess3.cjs.js',
 			format: 'cjs',
 			exports: 'named'
 		},
 		{
+			// Create an ESModule version
 			file: 'dist/pdchess3.esm.js',
 			format: 'es',
 			compact: true,
 			plugins: [terser()]
-		},
-		{
-			file: 'dist/pdchess3.js',
-			name: 'pdchess3',
-			format: 'umd',
-			compact: true,
-			plugins: [terser()]
 		}
+		// ,
+		// {
+		//	// Create a version that can run in Web browsers
+		// 	file: 'dist/pdchess3.js',
+		// 	name: 'pdchess3',
+		// 	format: 'umd',
+		// 	compact: true,
+		// 	plugins: [terser()]
+		// }
 	],
-	// context: 'this',
+	context: 'this',
 	plugins: [nodeResolve()]
 };

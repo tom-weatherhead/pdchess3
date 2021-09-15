@@ -1,15 +1,12 @@
 // github:tom-weatherhead/pdchess3/src/board.ts
 
+import { boardSize, columnLabels, rowLabels } from './constants';
 import { Game, IGameSetupInfo } from './game';
 import { Piece } from './piece';
 import { PieceArchetype } from './piece-archetype';
 import { PieceType } from './piece-type';
 import { Player } from './player';
 import { PlayerColour } from './player-colour';
-
-export const boardSize = 8;
-export const rowLabels = '12345678';
-export const columnLabels = 'abcdefgh';
 
 export interface IPieceSetupInfo {
 	pieceType: PieceType;

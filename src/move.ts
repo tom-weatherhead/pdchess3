@@ -1,6 +1,6 @@
 // github:tom-weatherhead/pdchess3/src/move.ts
 
-import { boardSize, columnLabels, rowLabels } from './board';
+import { boardSize, columnLabels, rowLabels } from './constants';
 import {
 	initialToPieceType,
 	PieceType,

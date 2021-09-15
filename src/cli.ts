@@ -21,9 +21,6 @@ class Cli {
 	private resigned = false;
 	private winner = 'None (0.5 - 0.5)';
 	private numConsecutiveMovesBelowMoveGenThreshold = 0;
-	// private readonly : ;
-	// private readonly : ;
-	// private readonly : ;
 
 	constructor(private readonly argv: string[]) {
 		this.game = new Game();
@@ -85,18 +82,6 @@ class Cli {
 		i = this.parseCommandLineArgumentsForPlayer(argv, i, game.whitePlayer);
 		this.parseCommandLineArgumentsForPlayer(argv, i, game.blackPlayer);
 	}
-
-	// console.log('game.whitePlayer.isAutomated:', game.whitePlayer.isAutomated);
-	// console.log(
-	// 	'game.whitePlayer.maxPlyWhenAutomated:',
-	// 	game.whitePlayer.maxPlyWhenAutomated
-	// );
-	// console.log('game.blackPlayer.isAutomated:', game.blackPlayer.isAutomated);
-	// console.log(
-	// 	'game.blackPlayer.maxPlyWhenAutomated:',
-	// 	game.blackPlayer.maxPlyWhenAutomated,
-	// 	'\n'
-	// );
 
 	private onWin(bestLineValue: number): string {
 		let winner =
