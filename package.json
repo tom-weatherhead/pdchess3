@@ -23,10 +23,9 @@
 	"module": "dist/pdchess3.esm.js",
 	"types": "dist/types/main.d.ts",
 	"files": [
-		"./loader.js",
 		"dist/pdchess3*.js",
 		"dist/types/**/*.d.ts",
-		"dist/types/cli.js"
+		"loader.js"
 	],
 	"bin": {
 		"pdchess3": "loader.js"
@@ -45,8 +44,8 @@
 		"// allw": "rmdir /Q /S coverage & rmdir /Q /S lib & npm run lint & npm run build & npm test & npm pack & move /Y thaw-common-utilities.ts-*.tgz C:\\git\\npm-packages\\",
 		"rebuild-offline": "npm run clean-offline && npm run build-and-test",
 		"clean-offline": "rm -rf coverage && rm -rf dist",
-		"rebuild-online": "npm run clean-online && npm i && npm run build-and-test",
-		"clean-online": "npm run clean-offline && rm -rf node_modules && rm -f package-lock.json",
+		"rebuild-online": "npm run clean && npm i && npm run build-and-test",
+		"clean": "npm run clean-offline && rm -rf node_modules && rm -f package-lock.json",
 		"build-and-test": "npm run prettier-check && npm run lint && npm run build && npm run rollup && npm test",
 		"prettier-check": "prettier --check \"src/**/*.ts\" \"test/**/*.ts\"",
 		"prettier-list": "prettier --list-different \"**/*.js\" \"**/*.ts\"",
@@ -57,14 +56,17 @@
 		"test": "jest --detectOpenHandles --forceExit",
 		"deploy": "eval mv $npm_package_name-$npm_package_version.tgz $(echo $npm_package_config_deploy_target_dir)/",
 		"prepare": "npm run build",
-		"prepublishOnly": "npm test && npm run lint",
+		"// prepublishOnly": "npm test && npm run lint",
 		"preversion": "npm run lint",
 		"version": "npm run prettier-format && git add -A src",
 		"postversion": "git push && git push --tags",
 		"re": "npm run prettier-format && npm run clean-offline && npm run build-and-test && npm pack && npm run deploy",
 		"loc": "git ls-files | grep -v package-lock.json | tr -d '\\r' | tr '\\n' '\\0' | xargs -0 wc -l",
-		"f": "npm run prettier-format && npm run all",
-		"start": "npm run all",
+		"f": "npm run clean && npm i && npm run re",
+		"// start": "npm run all",
+		"/// start": "node dist/pdchess3.cjs.js",
+		"start": "node loader.js",
+		"//// start": "node -r esm ./dist/types/cli.js",
 		"t55": "nice -n 20 pdchess3 c 5 c 5"
 	},
 	"config": {
@@ -73,32 +75,33 @@
 	"publishConfig": {},
 	"dependencies": {
 		"esm": "^3.2.25",
-		"thaw-common-utilities.ts": "^0.0.6",
+		"thaw-common-utilities.ts": "^0.0.10",
 		"thaw-repl": "^0.0.2"
 	},
 	"devDependencies": {
-		"@babel/core": "^7.14.3",
-		"@babel/preset-env": "^7.14.4",
-		"@babel/preset-typescript": "^7.13.0",
-		"@types/eslint": "^7.2.13",
-		"@types/jest": "^26.0.23",
-		"@types/node": "^14",
-		"@typescript-eslint/eslint-plugin": "^4.26.0",
-		"@typescript-eslint/parser": "^4.26.0",
-		"eslint": "^7.28.0",
-		"jest": "^27.0.4",
-		"prettier": "^2.3.1",
-		"rollup": "^2.51.0",
+		"@babel/core": "^7.15.5",
+		"@babel/preset-env": "^7.15.6",
+		"@babel/preset-typescript": "^7.15.0",
+		"@rollup/plugin-node-resolve": "^13.0.4",
+		"@types/eslint": "^7.28.0",
+		"@types/jest": "^27.0.1",
+		"@types/node": "^16",
+		"@typescript-eslint/eslint-plugin": "^4.31.1",
+		"@typescript-eslint/parser": "^4.31.1",
+		"@typescript-eslint/typescript-estree": "^4.31.1",
+		"eslint": "^7.32.0",
+		"jest": "^27.2.0",
+		"prettier": "^2.4.0",
+		"rollup": "^2.56.3",
 		"rollup-plugin-terser": "^7.0.2",
-		"typescript": "^4.3.2"
+		"typescript": "^4.4.3",
+		"typescript-eslint-language-service": "^4.1.5"
 	},
-	"peerDependencies": {},
 	"// The correct name is bundledDependencies": true,
 	"// The name bundleDependencies is also honoured": true,
 	"// bundledDependencies": "... is an array of package names",
 	"// bundledDependencies: See": "https://docs.npmjs.com/cli/v6/configuring-npm/package-json#bundleddependencies",
 	"bundledDependencies": [],
-	"optionalDependencies": {},
 	"engines": {
 		"node": ">= 8"
 	},

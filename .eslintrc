@@ -10,7 +10,13 @@
 		"plugin:@typescript-eslint/recommended"
 	],
 	"globals": {
+		"console": true,
 		"module": true,
 		"require": true
+	},
+	"rules": {
+		"quotes": ["warn", "single", "avoid-escape"],
+		"@typescript-eslint/ban-types": "warn",
+		"@typescript-eslint/no-explicit-any": "warn"
 	}
 }

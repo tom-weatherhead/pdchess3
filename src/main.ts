@@ -1,6 +1,7 @@
 // github:tom-weatherhead/pdchess3/src/main.ts
 
 export * from './board';
+export * from './cli';
 export * from './game';
 export * from './move';
 export * from './piece';
