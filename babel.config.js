@@ -1,3 +1,5 @@
+// babel.config.js
+
 /**
  * Copyright (c) Tom Weatherhead. All Rights Reserved.
  *
@@ -17,9 +19,9 @@ const pkg = require('./package.json');
 const supportedNodeVersion = semver.minVersion(pkg.engines.node).version;
 
 module.exports = {
-	// "plugins": [
+	// 'plugins': [
 	// 	[
-	// 		"@babel/plugin-transform-modules-commonjs",
+	// 		'@babel/plugin-transform-modules-commonjs',
 	// 		{
 	// 			allowTopLevelThis: true
 	// 		}
@@ -27,16 +29,16 @@ module.exports = {
 	// 	'@babel/plugin-transform-strict-mode',
 	// 	'@babel/plugin-proposal-class-properties'
 	// ],
-	"presets": [
+	'presets': [
 		[
-			"@babel/preset-env",
+			'@babel/preset-env',
 			{
 				targets: {
-					// node: "current"
+					// node: 'current'
 					node: supportedNodeVersion
 				}
 			}
 		],
-		"@babel/preset-typescript"
+		'@babel/preset-typescript'
 	]
 };

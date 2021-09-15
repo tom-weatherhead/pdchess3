@@ -1,3 +1,5 @@
+// jest.config.js
+
 /**
  * Copyright (c) Tom Weatherhead. All Rights Reserved.
  *
@@ -8,10 +10,10 @@
 'use strict';
 
 module.exports = {
-	"collectCoverage": true,
-	"coverageDirectory": "./coverage/",
-	"moduleFileExtensions": ["ts", "js"],
-	"testEnvironment": "node",
-	"testRegex": "(/test/.+\\.test\\.ts$)",
-	"transformIgnorePatterns": ["/node_modules/(?!(thaw-common-utilities.ts|thaw-repl))/"]
+	'collectCoverage': true,
+	'coverageDirectory': './coverage/',
+	'moduleFileExtensions': ['ts', 'js'],
+	'testEnvironment': 'node',
+	'testRegex': '(/test/.+\\.test\\.ts$)',
+	'transformIgnorePatterns': ['/node_modules/(?!(thaw-common-utilities.ts|thaw-repl))/']
 };
